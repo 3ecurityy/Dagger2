@@ -1,15 +1,16 @@
-package ir.mohammadrezaarabi.dagger2.FieldInjection;
-
-import androidx.appcompat.app.AppCompatActivity;
+package ir.mohammadrezaarabi.dagger2.MethodInjection;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import javax.inject.Inject;
 
-import ir.mohammadrezaarabi.dagger2.ConstructorInjection.Mobile.Mobile;
+
+import ir.mohammadrezaarabi.dagger2.MethodInjection.Mobile.Mobile;
 import ir.mohammadrezaarabi.dagger2.R;
 
-public class FieldInjectionActivity extends AppCompatActivity {
+public class MethodInjectionActivity extends AppCompatActivity {
 
     @Inject
     Mobile mobile;
@@ -21,7 +22,7 @@ public class FieldInjectionActivity extends AppCompatActivity {
 
 
         //With Dagger2
-        FieldMobileComponent component = DaggerFieldMobileComponent.create();
+        MethodMobileComponent component = DaggerMethodMobileComponent.create();
         component.injectField(this);
         mobile.run();
 
